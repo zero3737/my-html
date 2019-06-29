@@ -1,0 +1,347 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	box-sizing: border-box;
+}
+body {
+	margin-top: 60px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+li {
+	list-style: none;
+}
+img {
+	vertical-align: middle;
+}
+
+nav {
+	height: 60px;
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: #fff;
+	border-bottom: 1px solid #9e9e9e6e;
+}
+nav .left {
+	height: 100%;
+	margin-left: 50px;
+	float: left;
+}
+nav .left img {
+	height: 100%;
+	width: 100px;
+}
+
+nav .center {
+	margin-left: 150px;
+	float: left;
+	height: 100%;
+}
+nav .center ul{
+	height: 100%;
+	line-height: 60px;
+}
+nav .center ul li {
+	float: left;
+	height: 100%;
+	margin: 0 50px;
+}
+nav .center ul a:nth-child(1) li, nav .center ul a:nth-child(2) li {
+	width: 100px;
+	margin: 0px;
+	text-align: center;
+}
+nav .center ul a:nth-child(1) li:hover, nav .center ul a:nth-child(2) li:hover {
+	background-color: #eee;
+}
+nav .center ul li img {
+	width: 23px;
+	height: 23px;
+	margin-right: 5px;
+}
+nav .center ul a:first-child li span {
+	color: #eb8383;
+}
+nav .center ul li span {
+	font-size: 16px
+}
+nav .center ul li input {
+	width: 150px;
+	height: 35px;
+	outline: none;
+	background-color: #eee;
+}
+nav .center ul li form{
+	background-color: #eee;
+	border-radius: 25px;
+	height: 80%;
+	width: 200px;
+	line-height: 45px;
+	margin-top: 5px;
+	box-sizing: border-box;
+	padding-left: 16px;
+}
+nav .center ul li form img {
+	width: 18px;
+	height: 18px;
+}
+
+nav .right {
+	line-height: 60px;
+	float: right;
+	height: 100%;
+}
+nav .right ul {
+	height: 100%;
+}
+nav .right ul li {
+	float: left;
+	margin: 0 10px;
+}
+nav .right ul li img {
+	width: 25px;
+}
+nav .right ul li:nth-child(2) a {
+	color: #989698;
+}
+nav .right ul li:nth-child(3) {
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	border: 1px solid #f3aa9a;
+	line-height: 40px;
+	border-radius: 25px;
+	margin: 10px 15px;
+}
+nav .right ul li:nth-child(3):hover {
+	background-color: #ec614917;
+}
+nav .right ul li:nth-child(3) a {
+	color: #f3aa9a;
+}
+nav .right ul li:last-child img {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+nav .right ul li:nth-child(4) {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 25px;
+	text-align: center;
+	background-color: #ea6f5a;
+	margin: 10px 15px;
+}
+nav .right ul li:nth-child(4) a {
+	color: #fff;
+}
+nav .right ul li:last-child {
+	margin-right: 50px;
+}
+
+section {
+	width: 100%;
+	height: 1000px;
+}
+section > div {
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+section div .left {
+	width: 640px;
+	height: 100%;
+	float: left;
+}
+section div .left .tupian {
+	padding-top: 30px;
+}
+section div .left .tupian img {
+	width: 625px;
+	height: 270px;
+	border-radius: 10px;
+}
+section div .right {
+	float: left;
+	height: 100%;
+	width: 320px;
+}
+section div .right > ul {
+	padding-top: 30px;
+	padding-left: 35px;
+}
+section div .right ul li:not(.first):not(.erweima) {
+	padding-top: 5px;
+}
+section div .right ul li:not(.erweima) img{
+	width: 280px;
+	height: 50px;
+	vertical-align: top;
+}
+section div .right ul li.erweima {
+	width: 280px;
+	height: 80px;
+	border: 1px solid #f0f0f0;
+	border-radius: 5px;
+	margin-top: 5px;
+    padding: 10px 22px;
+}
+section div .right ul li.erweima div {
+	width: 110%;
+}
+section div .right ul li.erweima img {
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+section div .right ul li.erweima img ~ p {
+	float: left;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+section div .right ul li.erweima img + p {
+	font-weight: lighter;
+	font-size: 15px;
+}
+section div .right ul li.erweima img + p span {
+	font-weight: bolder;
+    margin-left: 7px;
+}
+section div .right ul li.erweima div p:last-child {
+	font-size: 13px;
+	color: #999;
+}
+section div .right ul > div {
+	width: 100%;
+	height: 320px;
+	margin-top: 25px;
+}
+section div .right ul > div .top {
+	float: left;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+section div .right ul > div .top .t_left {
+	float: left;
+	width: 70px;
+	text-align: center;
+}
+section div .right ul > div .top .t_left span {
+	font-size: 14px;
+	color: #969696;
+}
+section div .right ul > div .top .t_right {
+	float: right;
+	width: 90px;
+	height: 100%;
+	text-align: center;
+}
+section div .right ul > div .top .t_right img {
+	width: 14px;
+	height: 14px;
+	margin-right: 5px;
+}
+section div .right ul > div .top .t_right span {
+	font-size: 14px;
+	color: #969696;
+}
+section div .right ul > div .yonghu {
+	width: 100%;
+}
+section div .right ul > div .yonghu ul {
+	clear: both;
+	height: 290px;
+	margin-top: 5px;
+    padding-top: 1px;
+}
+section div .right ul > div .yonghu ul li {
+	height: 50px;
+	margin-top: 10px;
+}
+section div .right ul > div .yonghu ul li img {
+	width: 48px;
+	border-radius: 24px;
+	float: left;
+}
+section div .right ul > div .yonghu ul li div {
+	float: right;
+	width: 230px;
+	padding-top: 2px;
+    padding-left: 5px;
+	line-height: 22px;
+}
+section div .right ul > div .yonghu ul li div:nth-child(even) span:nth-child(odd) {
+	font-size: 14px;
+}
+section div .right ul > div .yonghu ul li div:nth-child(even) span:nth-child(even) {
+	font-size: 14px;
+	color: #42c02e;
+	float: right;
+	margin-right: 13px;
+}
+section div .right ul > div .yonghu ul li div:nth-child(odd) span {
+	font-size: 12px;
+	color: #969696;
+}
+.weibu {
+	width: 100%;
+	height: 35px;
+	margin-top: 30px;
+	border-radius: 5px;
+	border: 1px solid #dcdcdc;
+	background-color: #f7f7f7;
+	text-align: center;
+	line-height: 35px;
+	color: #787878;
+	font-size: 13px;
+}
+.weibu > span {
+	margin: 0px 3px;
+}
+.xinxi ul li{
+	width: 625px;
+	height: 160px;
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 15px 0px;
+}
+.xinxi ul li:first-child {
+	margin-top: 30px;
+}
+.xinxi ul li > img {
+	width: 150px;
+	height: 100px;
+	float: right;
+	margin-top: 15px;
+}
+.xinxi ul li div h2 {
+	font-size: 18px;
+}
+.xinxi ul li div p {
+	font-size: 13px;
+	color: #999;
+	margin: 5px 0px;
+    line-height: 24px;
+}
+.xinxi ul li > div {
+	width: 450px;
+	height: 130px;
+	float: left;
+}
+.xinxi ul li > div img {
+	width: 12px;
+	height: 12px;
+    margin-right: 1px;
+}
+.xinxi ul li > div div span {
+	font-size: 11px;
+	color: #b4b4b4;
+	margin-right: 10px;
+}

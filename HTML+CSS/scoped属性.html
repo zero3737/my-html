@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scoped属性</title>
+    <style type="text/css">
+        h1 { color:green; }
+        p { color:black; }
+    </style>
+</head>
+<body>
+    <div>
+        <style type="text/css" scoped>
+            h1 { color:red; }
+            p { color:blue; }
+        </style>
+        <h1>这个标题是红色的</h1>
+        <p>这个段落是蓝色的。</p>
+    </div>
+
+    <h1>这个标题是绿色的</h1>
+    <p>这个段落是黑色的。</p>
+    <p><b>注意:</b> 只有 Firefox属性支持 scoped 属性 。</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件</title>
+</head>
+<body>
+    <div id="app">
+        <my-date></my-date>
+    </div>
+    <div id="app1">
+        <my-date></my-date>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var Profile = Vue.extend({
+
+            template: `
+                <div>
+                    <input type="date">
+                    <p>今天天气很好！</p>
+                </div>
+            `
+
+        });
+        Vue.component("my-date", Profile);
+        var app = new Vue({
+
+            el: '#app'
+
+        });
+        var app1 = new Vue({
+
+            el: '#app1'
+
+        });
+    </script>
+</body>
+</html>

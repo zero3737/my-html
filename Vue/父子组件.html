@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件</title>
+</head>
+<body>
+    <div id="app">
+        <my-date></my-date>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var child = Vue.extend({
+
+            template: `
+                <p>我是子组件！</p>
+            `
+
+        });
+        var child1 = Vue.extend({
+
+            template: `
+                <p>我是子组件1！</p>
+            `
+
+        });
+        Vue.component("my-date", {
+            components: {
+
+                "child": child,
+                "child1": child1
+
+            },
+            template: `
+                <div>
+                    <child></child>
+                    <child1></child1>
+                </div>
+            `
+
+        });
+        var app = new Vue({
+
+            el: '#app'
+
+        });
+    </script>
+</body>
+</html>

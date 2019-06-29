@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>练习项目2</title>
+	<style type="text/css">
+		* {
+
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+
+		}
+		body {
+
+			margin-bottom: 50px;
+
+		}
+		header {
+
+			height: 25px;
+			border-bottom: 1px solid #9e9e9e2e;
+
+		}
+		header .left {
+
+			width: 20%;
+			font-size: 12px;
+			line-height: 200%;
+			float: left;
+
+		}
+		header .left > span {
+
+			margin-left: 7px;
+
+		}
+		header .left img {
+
+			vertical-align: middle;
+			width: 18px;
+			height: 18px;
+
+		}
+		header .left a {
+
+			margin-left: 7px;
+			color: #000;
+			text-decoration: none;
+
+		}
+		header .right {
+
+			float: right;
+			line-height: 150%;
+
+		}
+		header .right a {
+
+			margin-left: 19px;
+			font-size: 13px;
+			font-weight: bold;
+			color: #000;
+			text-decoration: none;
+
+		}
+		header .right .you {
+
+			font-weight: bold;
+			color: #38f;
+
+		}
+		header .right .more_chanpin {
+
+			background-color: #398bfb;
+			color: #fff;
+			text-decoration: none;
+			display: inline-block;
+			height: 25px;
+			width: 85px;
+			vertical-align: top;
+			text-align: center;
+
+		}
+		.neirong_1 {
+
+			width: 640px;
+			height: 262px;
+			margin: 0 auto;
+
+		}
+		.neirong_1 .baidu_logo {
+
+			width: 100%;
+			height: 50%;
+			text-align: center;
+			margin: 0 auto;
+
+		}
+		.neirong_1 .baidu_logo img {
+
+		    height: 100%;
+			width: 45%;
+			
+		}
+		.neirong_1 .search {
+
+			width: 100%;
+			height: 50%;
+
+		}
+		.neirong_1 .search form {
+
+			width: 100%;
+			height: 100%;
+			padding-top: 10px;
+			box-sizing: content-box;
+
+		}
+		.neirong_1 .search .input {
+
+			width: 85%;
+			height: 30%;
+			outline-style: none;
+
+		}
+		.neirong_1 .search .input:focus {
+
+			border: 1px solid #38f;
+
+		}
+		.neirong_1 .search .submit {
+
+			width: 15%;
+			height: 30%;
+			float: right;
+			background-color: #38f;
+			color: #fff;
+			font-size: 16px;
+			border-style: none;
+			outline: none;
+
+		}
+		.neirong_2 {
+
+			width: 892px;
+			height: 750px;
+			margin: 0 auto;
+			border: 1px solid #9e9e9e2e;
+
+		}
+		.neirong_2 .header {
+
+			border: 1px solid #9e9e9e2e;
+			height: 38px;
+
+		}
+		.neirong_2 .header .left {
+
+			font-size: 0px;
+			line-height: 38px;
+			height: 100%;
+			float: left;
+
+		}
+		.neirong_2 .header .left > span {
+
+			font-size: 14px;
+			display: inline-block;
+			height: 100%;
+			width: 80px;
+			text-align: center;
+
+		}
+		.neirong_2 .header .left > span:first-child {
+
+			width: 125px;
+
+		}
+		.neirong_2 .header .left > span:hover{
+
+			background-color: #9e9e9e9e;
+			color: #fff;
+
+		}
+		.neirong_2 .header .left img{
+
+			height: 18px;
+			width: 18px;
+			vertical-align: middle;
+			box-sizing: content-box;
+			padding-bottom: 5px;
+
+		}
+		.neirong_2 .header .right {
+
+			height: 100%;
+			text-align: center;
+			line-height: 295%;
+			float: right;
+			margin-right: 21px;
+
+		}
+		.neirong_2 .xinXiLan {
+
+			height: 95%;
+			width: 100%;
+
+		}
+		.neirong_2 .xinXiLan .left{
+
+			height: 100%;
+			width: 65%;
+			float: left;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_1{
+
+			height: 90px;
+			border-bottom: 1px solid #9e9e9e2e;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_1 h2,
+		.neirong_2 .xinXiLan .left .xinXi_2 .wenzi h2,
+		.neirong_2 .xinXiLan .left .xinXi_3 h2 {
+
+		    width: 100%;
+		    height: 40px;
+		    font-size: 18px;
+			padding-top: 20px;
+			
+		}
+		.neirong_2 .xinXiLan .left .xinXi_1 h2 a,
+		.neirong_2 .xinXiLan .left .xinXi_2 .wenzi h2 a,
+		.neirong_2 .xinXiLan .left .xinXi_3 h2 a {
+
+			text-decoration: none;
+			color: #000;
+			
+		}
+		.neirong_2 .xinXiLan .left .xinXi_1 a,
+		.neirong_2 .xinXiLan .left .xinXi_3 h2 a {
+
+			margin-left: 20px;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_1 div, 
+		.neirong_2 .xinXiLan .left .xinXi_1 div a {
+
+			margin-top: 10px;
+			font-size: 14px;
+			color: #9e9e9ecc;
+			text-decoration: none;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_2{
+
+			height: 160px;
+			border-bottom: 1px solid #9e9e9e2e;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_2 .tupian{
+
+			height: 100%;
+			width: 180px;
+			float: left;
+			padding: 20px 20px;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_2 .tupian img{
+
+			height: 118px;
+			width: 178px;
+			float: left;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_2 .wenzi div, 
+		.neirong_2 .xinXiLan .left .xinXi_2 .wenzi div a {
+
+			margin-top: 35px;
+			font-size: 14px;
+			color: #9e9e9ecc;
+			text-decoration: none;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_2 .wenzi {
+
+			width: 378px;
+			float: right;
+			padding: 20px;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_3 {
+
+			height: 210px;
+			border-bottom: 1px solid #9e9e9e2e;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_3 .tupian {
+
+			padding-left: 20px;
+			padding-top: 10px;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_3 .tupian img {
+
+			height: 118px;
+			width: 178px;
+
+		}
+		.neirong_2 .xinXiLan .left .xinXi_3 .wenzi, 
+		.neirong_2 .xinXiLan .left .xinXi_3 .wenzi a {
+
+			margin-left: 10px;
+			margin-top: 8px;
+			font-size: 14px;
+			color: #9e9e9ecc;
+			text-decoration: none;
+
+		}
+		.neirong_2 .xinXiLan .right {
+
+			height: 100%;
+			width: 35%;
+			float: right;
+
+		}
+		.neirong_2 .xinXiLan .right .header {
+
+			height: 30px;
+			width: 100%;
+			margin-top: 30px;
+			padding: 0px 10px;
+			border: 0px;
+
+		}
+		.neirong_2 .xinXiLan .right .header .h_left {
+
+			float: left;
+
+		}
+		.neirong_2 .xinXiLan .right .header .h_left a {
+
+			text-decoration: none;
+			font-weight: bolder;
+			font-size: 14px;
+			vertical-align: middle;
+			color: #000;
+
+		}
+		.neirong_2 .xinXiLan .right .header .h_right {
+
+			float: right;
+
+		}
+		.neirong_2 .xinXiLan .right .header .h_right span {
+
+			font-size: 14px;
+			vertical-align: middle;
+
+		}
+		.neirong_2 .xinXiLan .right .header .h_right img {
+
+			vertical-align: middle;
+
+		}
+		.neirong_2 .xinXiLan .right .redian ul li {
+
+			list-style: none;
+			float: left;
+			width: 50%;
+			padding-left: 10px;
+			padding-top: 10px;
+			font-size: 14px;
+			
+		}
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<!-- 左边 -->
+		<div class="left">
+			<span>
+				<span>上海：</span>
+				<img src="images/tianqi.jpg">
+				<span>27°C</span>
+			</span>
+			<span class="you">优</span>
+			<span>31</span>
+			<span>|</span>
+			<a href="#">换肤</a>
+			<a href="#">消息</a>
+		</div>
+		<!-- 右边 -->
+		<div class="right">
+			<a href="#">新闻</a>				
+			<a href="#">hao123</a>	
+			<a href="#">地图</a>
+			<a href="#">学术</a>
+			<a href="#">设置</a>
+			<a href="#" class = "more_chanpin">更多产品</a>
+		</div>
+	</header>
+	<!-- 内容 -->
+	<section class = "neirong_1">
+		<div class = "baidu_logo">
+			<img src="images/baidu_logo.png">
+		</div>
+		<div class="search">
+			<form>
+				<input type="text" class = "input">
+				<input type="submit" value="百度一下" class = "submit">
+			</form>
+		</div>
+	</section>
+	<section class = "neirong_2">
+		<div class = "header">
+			<div class = "left">
+				<span>
+					<img src="images/sucai_1.png">
+					<span>我的关注</span>
+				</span>
+				<span>推荐</span>
+				<span>导航</span>
+			</div>
+			<div class = "right">
+				<img src="images/sucai_2.png">
+			</div>
+		</div>
+		<div class="xinXiLan">
+			<div class="left">
+				<div class="xinXi_1">
+					<h2>
+						<a href="#">2019年底我国将基本完成河湖“清四乱”</a>
+					</h2>
+					<div>
+						<a href="#">中国青年网</a>
+						<span>02-06 13:01</span>
+					</div>
+				</div>
+				<div class="xinXi_2">
+					<div class = "tupian">
+						<img src="images/tupian_1.jpg">
+					</div>
+					<div class = "wenzi">
+						<h2>
+							<a href="#">零钱通后再推微信支付分，微信支付挑战支付宝能否成功？</a>
+						</h2>
+						<div>
+							<a href="#">人人都是产品经理</a>
+							<span>02-06 09:21</span>
+						</div>
+					</div>
+				</div>
+				<div class="xinXi_3">
+					<h2>
+						<a href="#">徐静蕾黄立行已结婚？赵薇好友刘春送祝福：新婚快乐！</a>
+					</h2>
+					<div class="tupian">
+						<img src="images/tupian_2.jpg">
+						<img src="images/tupian_3.jpg">
+						<img src="images/tupian_4.jpg">
+					</div>
+					<div class="wenzi">
+						<a href="#">阳光八卦君</a>
+						<span>02-06 11:49</span>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="header">
+					<div class="h_left">
+						<a href="#">实时热点</a>
+					</div>
+					<div class="h_right">
+						<img src="images/sucai_3.png">
+						<span>换一换</span>
+					</div>
+				</div>
+				<div class="redian">
+					<ul>
+						<li>5省将有暴雪</li>
+						<li>张庭纳税21亿</li>
+						<li>苹果考虑重新定价</li>
+						<li>王大陆口型对不上</li>
+						<li>嘀嗒顺风车伤人</li>
+						<li>实习生在日身亡</li>
+						<li>周扬青罗志祥同游</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

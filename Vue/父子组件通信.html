@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件通信</title>
+</head>
+<body>
+    <div id="app">
+        <my-parent p_msg1 = "今天天气好热！" p_msg2 = "今天天气好冷！"></my-parent>
+    </div>
+    <template id="my_parent">
+        <div>
+            <!-- 这里必须使用Vue的动态绑定，不然会识别成字符串。 -->
+            <my-child1 :msg1 = "p_msg1"></my-child1>
+            <my-child2 :msg2 = "p_msg2"></my-child2>
+        </div>
+    </template>
+    <template id="my_child1">
+        <p>{{msg1}}</p>
+    </template>
+    <template id="my_child2">
+        <p>{{msg2}}</p>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component("my-parent", {
+            components: {
+
+                "my-child1": {
+
+                    template: "#my_child1",
+                    props: [`msg1`]
+
+                },
+                "my-child2": {
+
+                    template: "#my_child2",
+                    props: [`msg2`]
+
+                }
+
+            },
+            template: `#my_parent`,
+            props: ["p_msg1", "p_msg2"]
+
+        });
+        var app = new Vue({
+
+            el: '#app'
+
+        });
+    </script>
+</body>
+</html>

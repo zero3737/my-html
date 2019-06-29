@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index.html</title>
+	<style type="text/css">
+		body {
+
+			background-color: #000;
+
+		}
+		span {
+
+			width: 25px;
+			height: 25px;
+			display: inline-block;
+			background: url(images/sucai.png);
+			background-size: contain;
+			position: fixed;
+			animation: flash 1s linear infinite;
+
+		}
+		span:hover {
+
+			transition: 1s linear;
+
+		}
+		@keyframes flash {
+
+			from {
+
+				opacity: 0;
+
+			}
+			to {
+
+				opacity: 1;
+
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var span, suofan, jiaodu, temp;
+
+		for (i = 0; i < 75; i++) {
+
+			span = document.createElement("span");
+			span.style.top = Math.random() * document.documentElement.clientHeight + "px";
+			span.style.left = Math.random() * document.documentElement.clientWidth + "px";
+			span.style.animationDelay = (Math.random() * 5) + "s";
+			suofan = Math.random() * 1.5;
+			jiaodu = Math.random() * 360;
+			span.style.transform = "scale("+ suofan + "," + suofan + ") rotate("+ jiaodu +"deg)";
+
+			span.onmouseover = function () {
+
+				temp = this.style.transform;
+				this.style.transform = "scale(2, 2) rotate(360deg)";
+
+			}
+			span.onmouseout = function () {
+
+				this.style.transform = temp;
+
+			}
+
+			document.body.appendChild(span);
+			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>局部组件</title>
+</head>
+<body>
+    <div id="app">
+        <my-date></my-date>
+        <my-color></my-color>
+    </div>
+    <!-- app1 会报错。因为my-date和my-color是app的局部组件。 -->
+    <div id="app1">
+        <my-date></my-date>
+        <my-color></my-color>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var Profile = Vue.extend({
+
+            template: `
+                <div>
+                    <input type="date">
+                    <p>今天天气很好！</p>
+                </div>
+            `
+
+        });
+        var Profile2 = Vue.extend({
+
+            template: `
+                <div>
+                    <input type="color">
+                    <p>我是调色板！</p>
+                </div>
+            `
+
+        });
+        var app = new Vue({
+
+            el: '#app',
+            components: {
+
+                "my-date": Profile,
+                "my-color": Profile2
+
+            }
+
+        });
+        var app1 = new Vue({
+
+            el: '#app1'
+
+        });
+    </script>
+</body>
+</html>

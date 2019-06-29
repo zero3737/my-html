@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>进度条</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#wai {
+			width: 700px;
+			height: 40px;
+			margin: 30px auto;
+			border-radius: 5px;
+			position: relative;
+		}
+		#jindutiao, #jiazaizhi, #jiazaitiao, #anniu {
+			position: absolute;
+		}
+		#jindutiao {
+			width: 650px;
+			height: 100%;
+			background-color: #f3f3f3;
+			border-radius: 5px;
+			top: 0px;
+			left: 0px;
+		}
+		#jiazaizhi {
+			top: 0px;
+			right: 7px;
+			line-height: 40px;
+		}
+		#jiazaitiao {
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 0px;
+			background-color: #ff8e6a;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+		#anniu {
+			width: 25px;
+			height: 50px;
+			background-color: #ff8e6a;
+			top: -5px;
+			left: 0px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="wai">
+		<div id="jindutiao">
+			<div id="jiazaitiao"></div>
+			<span id="anniu"></span>
+		</div>
+		<span id="jiazaizhi">0%</span>
+	</div>
+	<script type="text/javascript">
+
+		var anniu = document.getElementById("anniu");
+		var wai = document.getElementById("wai");
+		var jindutiao = document.getElementById("jindutiao");
+		var jiazaitiao = document.getElementById("jiazaitiao");
+		var jiazaizhi = document.getElementById("jiazaizhi");
+
+		anniu.onmousedown = function() {
+
+			x = event.clientX - wai.offsetLeft - anniu.offsetLeft;
+			document.onmousemove = function() {
+
+				xxianzhizhi = event.clientX - x - wai.offsetLeft;
+				if(xxianzhizhi < 0) xxianzhizhi = 0;
+				if(xxianzhizhi > jindutiao.offsetWidth - anniu.offsetWidth)
+					xxianzhizhi = jindutiao.offsetWidth - anniu.offsetWidth;
+				anniu.style.left = xxianzhizhi + "px";
+				jiazaitiao.style.width = xxianzhizhi + "px";
+				jiazaizhi.innerText = parseInt(xxianzhizhi / (jindutiao.offsetWidth - anniu.offsetWidth) * 100)  + "%";
+				return false;
+
+			}
+		}
+		document.onmouseup = function() {
+
+			document.onmousemove = null;
+
+		}
+
+	</script>
+</body>
+</html>

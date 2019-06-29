@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>绚丽小球动画</title>
+	<style type="text/css">
+		body {
+
+			margin: 0;
+
+		}
+		canvas {
+
+			background-color: #000;
+			
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		onload = function() {
+
+			let canvas = document.getElementById( 'canvas' );
+			ctx = canvas.getContext( "2d" );
+
+			canvas.height = window.innerHeight;
+			canvas.width = window.innerWidth;
+
+			class Qiu {
+
+				constructor( x, y, color ) {
+
+					this.x = x;
+					this.y = y;
+					this.color = color;
+					this.r = 50;
+					this.zengx = Math.random() * 10 - 5;
+					this.zengy = Math.random() * 10 - 5;
+					this.zengr = Math.random() * 3;
+
+				}
+				draw() {
+
+					ctx.save();
+					ctx.beginPath();
+					ctx.arc( this.x, this.y, this.r, 0, 2 * Math.PI );
+					ctx.fillStyle = this.color;
+					ctx.fill();
+					ctx.restore();
+
+				}
+				update() {
+
+					this.x += this.zengx;
+					this.y += this.zengy;
+					this.r -= this.zengr;
+					if( this.r <= 0 ) this.r = 0;
+
+				}
+
+			}
+
+			let colorbox = [ "red", "green", "yellow", "orange", "#40fff6", "#fff", "blue", "#c0f", "#fff" ];
+			qiubox = [];
+
+			canvas.onmousemove = function(e) {
+
+				//性能有问题
+				qiubox.push( new Qiu( e.clientX, e.clientY, colorbox[ parseInt( Math.random() * 8 ) ] ) );
+
+			}
+			requestAnimationFrame( qiujisuan );
+
+		}
+		function qiujisuan() {
+
+			ctx.clearRect( 0, 0, canvas.width, canvas.height );
+			qiubox.forEach( function(qiu) {
+
+				qiu.draw();
+				qiu.update();
+
+			} );
+			requestAnimationFrame( qiujisuan );
+				
+		}
+	</script>
+</body>
+</html>

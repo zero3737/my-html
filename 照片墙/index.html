@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>index.html</title>
+	<style type="text/css">
+		* {
+
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+
+		}
+		li {
+
+			width: 270px;
+			height: 480px;
+			background: no-repeat -45px 0px;
+			background-size: cover;
+			box-shadow: 0px 0px 5px;
+			position: fixed;
+			transition: all 0.5s linear;
+
+		}
+		.dianji {
+
+			top:50% !important;
+			left: 50% !important;
+			transform: rotate(0deg) translate(-50%, -50%) scale(1.2, 1.2) !important;
+			transition: all 1s linear;
+			z-index: 999;
+
+		}
+	</style>
+</head>
+<body>
+	<ul></ul>
+	<script type="text/javascript">
+		onload = function () {
+
+			var ul = document.getElementsByTagName("ul")[0];
+			var h = document.documentElement.clientHeight - 480;
+			var w = document.documentElement.clientWidth - 270;
+			var images = [];
+			var img = null;
+
+			for(i = 0; i < 10; i++) {
+
+				li = document.createElement("li");
+				img = new Image();
+				images.push(img);
+				img.src = "images/sucai_" + (i + 1) + ".jpg";
+				li.style.backgroundImage = `url(${img.src})`;
+				li.style.top = Math.random() * h + "px";
+				li.style.left = Math.random() * w + "px";
+				li.style.transform = "rotate("+ Math.random() * 360 +"deg)";
+				ul.appendChild(li);
+
+			}
+
+			var liArr = document.getElementsByTagName("li");
+
+			for(i = 0; i < liArr.length; i++) {
+
+				li = liArr[i];
+				li.onclick = function () {
+
+					for(j = 0; j < liArr.length; j++) {
+
+						liArr[j].className = "";
+
+					}
+					this.className = "dianji";
+
+				}
+
+			}
+			var id = setInterval( function() {
+
+				var bool = true;
+
+				for( val of  images ) {
+
+					bool = bool && val.complete;
+					if(bool == "flase") return;
+
+				}
+				if(bool) {
+
+					clearInterval(id);
+					alert("点击照片可查看。");
+
+				}
+
+			}, 0 );
+
+		}
+	</script>
+</body>
+</html>

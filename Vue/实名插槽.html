@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实名插槽</title>
+</head>
+<body>
+    <div id="app">
+        <my-tag>
+            <p slot = "hello world">hello world</p>
+            <p slot = "hello world2">hello world2</p>
+            <p slot = "hello world3">hello world3</p>
+        </my-tag>
+    </div>
+    <template id="my_tag">
+        <div>
+            <h2>插槽的头部</h2>
+            <slot name="hello world2">匿名插槽</slot>
+            <slot name="hello world">匿名插槽</slot>
+            <slot name="hello world3">匿名插槽</slot>
+            <footer>插槽的尾部</footer>
+        </div>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component("my-tag", {
+
+            template: "#my_tag",
+
+        });
+        var app = new Vue({
+
+            el: '#app'
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实例多个Vue对象</title>
+</head>
+<body>
+    <div id="one">
+        <h2>{{name}}</h2>
+    </div>
+    <div id="two">
+        <h2>{{name}}</h2>
+        <div><button @click = "changeOne">改名</button></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        onload = function() {
+
+            var one = new Vue({
+
+                el: '#one',
+                data: {
+
+                    name: "one-title"
+
+                }
+
+            });
+            var two = new Vue({
+
+                el: '#two',
+                data: {
+
+                    name: "two-title"
+
+                },
+                methods: {
+
+                    changeOne() {
+
+                        one.name = "已经改名了！";
+
+                    }
+
+                }
+
+            });
+
+        }
+    </script>
+</body>
+</html>
